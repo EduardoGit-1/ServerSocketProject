@@ -1,0 +1,1 @@
+web : javac src/project/Server.java
