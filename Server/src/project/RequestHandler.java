@@ -92,7 +92,7 @@ public class RequestHandler extends Thread {
 
             switch (methodPath) {
                 case "GET /getAll":
-                    this.presencesAndMessagesController.getPresencesAndMessages(path, controller, messageRepository, userRepository);
+                    this.presencesAndMessagesController.getPresencesAndMessages(controller, messageRepository, userRepository);
                     break;
                 case "POST /newUser":
                     this.userController.createUser(in, userRepository, messageRepository, controller);

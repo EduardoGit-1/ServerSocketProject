@@ -24,8 +24,8 @@ public class Server {
 		MessageRepository messageRepository = new MessageRepository();
         UserRepository userRepository = new UserRepository();
 		ServerSocket servidor = null; 
-	
-		try	{ 
+		try	{
+			
 			servidor = new ServerSocket(port);
 		} catch (Exception e) { 
 			System.err.println("erro ao criar socket servidor...");

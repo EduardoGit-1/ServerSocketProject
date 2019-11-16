@@ -27,7 +27,7 @@ public class PresencesAndMessagesController {
         this.userService = new UserService();
     }
     
-    public void getPresencesAndMessages(String path, Controller controller, MessageRepository messageRepository, UserRepository userRepository) throws JsonProcessingException{
+    public void getPresencesAndMessages(Controller controller, MessageRepository messageRepository, UserRepository userRepository) throws JsonProcessingException{
         PresencesAndMessagesResponse presencesAndMessagesResponse = new PresencesAndMessagesResponse(this.userService.getUserNicknames(userRepository), messageRepository.getMessageRepository());
         String response = objectMapper.writeValueAsString(presencesAndMessagesResponse);
         controller.universalController(response);

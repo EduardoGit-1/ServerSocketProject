@@ -32,7 +32,7 @@ public class UserController {
 
     public synchronized void createUser(BufferedReader in, UserRepository userRepository, MessageRepository messageRepository, Controller controller) throws IOException{
        String userJson = userService.handleNewUserRequest(in);
-       System.out.println(userJson);
+       System.out.println("User json: " + userJson);
        User user = objectMapper.readValue(userJson, User.class);
        
        String response = null;

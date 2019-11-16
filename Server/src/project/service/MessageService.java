@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class MessageService {
     
-    
+   public MessageService() {} 
    public String handleMessageRequest(BufferedReader in) throws IOException {
         String line;
         String response = "";

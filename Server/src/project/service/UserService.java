@@ -16,6 +16,7 @@ import project.repository.UserRepository;
  */
 public class UserService {
 
+	public UserService() {}
     public String[] getUserNicknames(UserRepository userRepository) {
         int i = 0;
         String[] usernames = new String[userRepository.getUserRepository().size()];
