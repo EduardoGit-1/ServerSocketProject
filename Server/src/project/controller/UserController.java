@@ -10,7 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import project.model.User;
 import project.payload.ErrorCreatingUserResponse;
-import project.payload.NewUserPayload;
+import project.payload.NewUserResponse;
 import project.repository.MessageRepository;
 import project.repository.UserRepository;
 import project.service.UserService;
@@ -44,8 +44,8 @@ public class UserController {
        }else{
            user.setId(userRepository.getUserRepository().size() + 1);
            userRepository.addUser(user);
-           NewUserPayload newUserPayload = new NewUserPayload(user.getId(), user.getUsername(), this.userService.getUserNicknames(userRepository), messageRepository.getMessageRepository());
-           response = objectMapper.writeValueAsString(newUserPayload);
+           NewUserResponse newUserResponse = new NewUserResponse(user.getId(), user.getUsername(), this.userService.getUserNicknames(userRepository), messageRepository.getMessageRepository());
+           response = objectMapper.writeValueAsString(newUserResponse);
            System.out.println(response);
            controller.universalController(response);
        }

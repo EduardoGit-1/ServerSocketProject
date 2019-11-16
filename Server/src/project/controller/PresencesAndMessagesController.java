@@ -7,7 +7,7 @@ package project.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import project.payload.PresencesAndMessagesPayload;
+import project.payload.PresencesAndMessagesResponse;
 import project.repository.MessageRepository;
 import project.repository.UserRepository;
 import project.service.UserService;
@@ -28,8 +28,8 @@ public class PresencesAndMessagesController {
     }
     
     public void getPresencesAndMessages(String path, Controller controller, MessageRepository messageRepository, UserRepository userRepository) throws JsonProcessingException{
-        PresencesAndMessagesPayload presencesAndMessagesPayload = new PresencesAndMessagesPayload(this.userService.getUserNicknames(userRepository), messageRepository.getMessageRepository());
-        String response = objectMapper.writeValueAsString(presencesAndMessagesPayload);
+        PresencesAndMessagesResponse presencesAndMessagesResponse = new PresencesAndMessagesResponse(this.userService.getUserNicknames(userRepository), messageRepository.getMessageRepository());
+        String response = objectMapper.writeValueAsString(presencesAndMessagesResponse);
         controller.universalController(response);
     }
 }

@@ -11,7 +11,7 @@ import java.io.IOException;
 import project.model.Message;
 import project.model.User;
 import project.payload.MessagePayload;
-import project.payload.PresencesAndMessagesPayload;
+import project.payload.PresencesAndMessagesResponse;
 import project.repository.MessageRepository;
 import project.repository.UserRepository;
 import project.service.MessageService;
@@ -40,8 +40,8 @@ public class MessageController {
         User user = userRepository.getUserById(messagePayload.getId());
         Message message = new Message(user, messagePayload.getContent());
         messageRepository.addMessage(message);
-        PresencesAndMessagesPayload presencesAndMessagesPayload = new PresencesAndMessagesPayload(this.userService.getUserNicknames(userRepository), messageRepository.getMessageRepository());
-        String response = objectMapper.writeValueAsString(presencesAndMessagesPayload);
+        PresencesAndMessagesResponse presencesAndMessagesResponse = new PresencesAndMessagesResponse(this.userService.getUserNicknames(userRepository), messageRepository.getMessageRepository());
+        String response = objectMapper.writeValueAsString(presencesAndMessagesResponse);
         System.out.println("Resposta: " + response);
         controller.universalController(response);
     }

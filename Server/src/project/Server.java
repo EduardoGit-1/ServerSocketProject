@@ -20,7 +20,7 @@ public class Server {
 	
         
 	public static void main(String[] args) {
-		int port=DEFAULT_PORT;
+		int port = DEFAULT_PORT;
 		MessageRepository messageRepository = new MessageRepository();
         UserRepository userRepository = new UserRepository();
 		ServerSocket servidor = null; 

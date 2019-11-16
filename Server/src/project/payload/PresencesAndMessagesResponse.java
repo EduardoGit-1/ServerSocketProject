@@ -13,15 +13,15 @@ import project.model.Message;
  *
  * @author Eduardo
  */
-public class PresencesAndMessagesPayload {
+public class PresencesAndMessagesResponse {
     
     private String[] presences;
     private ArrayList<Message> messages;
 
-    public PresencesAndMessagesPayload() {
+    public PresencesAndMessagesResponse() {
     }
 
-    public PresencesAndMessagesPayload(String[] presences, ArrayList<Message> messages) {
+    public PresencesAndMessagesResponse(String[] presences, ArrayList<Message> messages) {
         this.presences = presences;
         this.messages = messages;
     }

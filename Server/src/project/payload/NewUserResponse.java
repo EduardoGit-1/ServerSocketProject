@@ -13,16 +13,16 @@ import project.model.Message;
  *
  * @author Eduardo
  */
-public class NewUserPayload {
+public class NewUserResponse {
     private int userID;
     private String username;
     private String[] presences;
     private ArrayList<Message> messages;
 
-    public NewUserPayload() {
+    public NewUserResponse() {
     }
 
-    public NewUserPayload(int userID, String username,String[] presences, ArrayList<Message> messages) {
+    public NewUserResponse(int userID, String username,String[] presences, ArrayList<Message> messages) {
         this.userID = userID;
         this.presences = presences;
         this.messages = messages;
